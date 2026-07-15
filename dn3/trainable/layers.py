@@ -2,7 +2,7 @@ import copy
 import torch
 import numpy as np
 from torch import nn
-from dn3.trainable.utils import _make_mask, _make_span_from_seeds
+from dn3.dn3.trainable.utils import _make_mask, _make_span_from_seeds
 
 
 class _SingleAxisOperation(nn.Module):

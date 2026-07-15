@@ -1,5 +1,5 @@
 import moabb.datasets as mbd
-from dn3.utils import make_epochs_from_raw, DN3ConfigException
+from dn3.dn3.utils import make_epochs_from_raw, DN3ConfigException
 
 
 # These are hard-coded in MOABB, if you are having trouble with this, check if the "sign" has changed

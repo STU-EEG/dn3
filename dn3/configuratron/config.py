@@ -1,6 +1,6 @@
 import mne
 import yaml
-from yamlinclude import YamlIncludeConstructor
+import yaml_include
 import tqdm
 import warnings
 import mne.io as loader
@@ -12,11 +12,11 @@ from pathlib import Path
 from collections import OrderedDict
 from mne import pick_types, read_annotations, set_log_level
 
-from dn3.data.dataset import Dataset, RawTorchRecording, EpochTorchRecording, Thinker, DatasetInfo, DumpedDataset
-from dn3.utils import make_epochs_from_raw, DN3ConfigException, skip_inds_from_bad_spans
-from dn3.transforms.instance import MappingDeep1010, TemporalInterpolation
-from dn3.transforms.channels import stringify_channel_mapping
-from dn3.configuratron.extensions import MoabbDataset
+from dn3.dn3.data.dataset import Dataset, RawTorchRecording, EpochTorchRecording, Thinker, DatasetInfo, DumpedDataset
+from dn3.dn3.utils import make_epochs_from_raw, DN3ConfigException, skip_inds_from_bad_spans
+from dn3.dn3.transforms.instance import MappingDeep1010, TemporalInterpolation
+from dn3.dn3.transforms.channels import stringify_channel_mapping
+from dn3.dn3.configuratron.extensions import MoabbDataset
 
 from moabb.datasets.download import get_dataset_path
 
@@ -37,8 +37,8 @@ _SUPPORTED_EXTENSIONS = {
     '.bdf': loader.read_raw_bdf,
     '.gdf': loader.read_raw_gdf,
 }
-
-YamlIncludeConstructor.add_to_loader_class(loader_class=yaml.FullLoader)
+# Register the include tag
+yaml.add_constructor("!include", yaml_include.Constructor())
 
 # Since we are doing a lot of loading in the configuratron, this is nice to suppress some tedious information.
 # Keep in mind, removing this might help debug data loading problems, `mne.set_log_level(True)` to counteract.

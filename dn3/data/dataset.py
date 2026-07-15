@@ -5,9 +5,9 @@ import bisect
 import tqdm
 import numpy as np
 
-from dn3.transforms.preprocessors import Preprocessor
-from dn3.transforms.instance import InstanceTransform, same_channel_sets
-from dn3.utils import rand_split, unfurl, DN3atasetNanFound, DN3atasetException
+from dn3.dn3.transforms.preprocessors import Preprocessor
+from dn3.dn3.transforms.instance import InstanceTransform, same_channel_sets
+from dn3.dn3.utils import rand_split, unfurl, DN3atasetNanFound, DN3atasetException
 
 from abc import ABC
 from collections import OrderedDict

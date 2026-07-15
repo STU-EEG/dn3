@@ -1,7 +1,7 @@
 import torch
 import numpy as np
 from scipy.linalg import sqrtm
-from dn3.transforms.instance import EuclideanAlignmentTransform, EEG_INDS
+from dn3.dn3.transforms.instance import EuclideanAlignmentTransform, EEG_INDS
 
 
 class Preprocessor:

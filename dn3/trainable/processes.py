@@ -1,11 +1,11 @@
 import re
 from sys import gettrace
 
-from dn3.trainable.utils import _make_mask, _make_span_from_seeds
-from dn3.data.dataset import DN3ataset
-from dn3.utils import LabelSmoothedCrossEntropyLoss
-from dn3.trainable.models import Classifier
-from dn3.transforms.batch import BatchTransform
+from dn3.dn3.trainable.utils import _make_mask, _make_span_from_seeds
+from dn3.dn3.data.dataset import DN3ataset
+from dn3.dn3.utils import LabelSmoothedCrossEntropyLoss
+from dn3.dn3.trainable.models import Classifier
+from dn3.dn3.transforms.batch import BatchTransform
 
 # Swap these two for Ipython/Jupyter
 # import tqdm

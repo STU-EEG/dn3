@@ -8,7 +8,7 @@ from typing import List
 
 from .channels import map_dataset_channels_deep_1010, DEEP_1010_CH_TYPES, SCALE_IND, \
     EEG_INDS, EOG_INDS, REF_INDS, EXTRA_INDS, DEEP_1010_CHS_LISTING
-from dn3.utils import min_max_normalize
+from dn3.dn3.utils import min_max_normalize
 
 from torch.nn.functional import interpolate
 
