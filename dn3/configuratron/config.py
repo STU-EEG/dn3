@@ -128,7 +128,7 @@ class ExperimentConfig:
             return_trial_ids = self.experiment.get('trial_ids', False)
             relative_directory = self.experiment.get('relative_directory', None)
 
-        self.datasets = dict()
+        self.datasets: dict[str, DatasetConfig] = dict()
         for i, name in enumerate(usable_datasets):
             if name in ds_entries.keys():
                 self.datasets[name] = DatasetConfig(name, ds_entries[name], deep1010=self._make_deep1010,
