@@ -117,6 +117,8 @@ def _heuristic_ref_resolution(ref_channel_name: str):
 def _heuristic_eeg_resolution(eeg_ch_name: str):
     eeg_ch_name = eeg_ch_name.upper()
     # remove some common garbage
+    eeg_ch_name = eeg_ch_name.replace('-A1', '')
+    eeg_ch_name = eeg_ch_name.replace('-A2', '')
     eeg_ch_name = eeg_ch_name.replace('EEG', '')
     eeg_ch_name = eeg_ch_name.replace('REF', '')
     informative_characters = set([c for name in DEEP_1010_CHS_LISTING[:_NUM_EEG_CHS] for c in name])
