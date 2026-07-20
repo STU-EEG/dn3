@@ -994,7 +994,8 @@ class Dataset(DN3ataset, ConcatDataset):
             for v in val:
                 training.remove(v)
             for t in test:
-                training.remove(t)
+                if t in training:
+                    training.remove(t)
 
             training = self._make_like_me(training)
 
